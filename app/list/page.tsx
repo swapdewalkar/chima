@@ -24,9 +24,13 @@ const ListVideo = () => {
 	return (
 		<>
 			<div>
-				<div className="btn-group">
-					<button className="btn" onClick={()=>setOffset(offset-1)}>Previous</button>
-					<button className="btn" onClick={()=>setOffset(offset+1)}>Next</button>
+				<div className=" flex">
+					<div className="flex-left">
+						<button className="btn btn-accent w-90" onClick={()=>setOffset(offset-1)}>Previous</button>
+					</div>
+					<div className="flex-right">
+						<button className="btn btn-accent ml-3" onClick={()=>setOffset(offset+1)}>Next</button>
+					</div>
 				</div>
 				<table className="table table-zebra">
 					<thead>
