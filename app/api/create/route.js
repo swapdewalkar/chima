@@ -6,6 +6,8 @@ export async function POST(request) {
   const product = body.product;
   const company = body.company;
   const profile = body.profile;
+
+  const script = await fetch('http://localhost:3000/api/script', {method: 'POST', body: JSON.stringify({title: title, product: product, company: company, profile: profile})}).then((resp) => resp.json())
   const url = 'https://api.synthesia.io/v2/videos';
   const options = {
     method: 'POST',
@@ -27,7 +29,7 @@ export async function POST(request) {
               longBackgroundContentMatchMode: 'trim'
             }
           },
-          scriptText: 'fdksal fj',
+          scriptText: script.scriptText,
           avatar: '49dc8f46-8c08-45f1-8608-57069c173827',
           background: 'off_white'
         }

@@ -45,7 +45,7 @@ const ListVideo = () => {
 							<tr key={video.id}>
 							<td>{video.id}</td>
 							<td>{video.title}</td>
-							<td><a href={video.download}>Download</a></td>
+							<td><a href={video.download} target="_blank">Download</a></td>
 							<td>{video.duration}</td>
 							<td>{video.status}</td>
 							<td>{video.visibility}</td>
