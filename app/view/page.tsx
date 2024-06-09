@@ -7,8 +7,9 @@ const ViewVideo = () => {
   const [url, setURL] = React.useState("");
   const handle = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    const id = e.currentTarget.elements.namedItem('id')?.value;
-    setId(id);
+    const form = new FormData(e.currentTarget)
+    const id = form.get('id')?.toString();
+    if (id) setId(id);
     console.log(id);
   }
 
