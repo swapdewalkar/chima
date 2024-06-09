@@ -8,10 +8,11 @@ const CreateVideo = () => {
   const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     setFetching(true);
-    const title = e.currentTarget.elements.namedItem('title')?.value;
-    const product = e.currentTarget.elements.namedItem('product')?.value;
-    const company = e.currentTarget.elements.namedItem('company')?.value;
-    const profile = e.currentTarget.elements.namedItem('profile')?.value;
+    const form = new FormData(e.currentTarget)
+    const title = form.get('title');
+    const product = form.get('product');
+    const company = form.get('company');
+    const profile = form.get('profile');
     const data = {"title": title, "product": product, "company": company, "profile": profile};
     console.log("swapnil",data);
     fetch('/api/create',{method: 'POST', body: JSON.stringify(data)})
