@@ -42,7 +42,7 @@ const ListVideo = () => {
 					</thead>
 					<tbody>
 						{videos.map((video) => (
-							<tr>
+							<tr key={video.id}>
 							<td>{video.id}</td>
 							<td>{video.title}</td>
 							<td><a href={video.download}>Download</a></td>
